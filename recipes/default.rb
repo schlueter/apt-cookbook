@@ -74,7 +74,7 @@ end
 # provides /var/lib/apt/periodic/update-success-stamp on apt-get update
 package 'update-notifier-common' do
   notifies :run, 'execute[apt-get-update]', :immediately
-  options %w{--force-yes}
+  options '--force-yes'
   only_if { apt_installed? }
 end
 
